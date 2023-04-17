@@ -1,0 +1,13 @@
+package apr14th;
+
+public class OurTest {
+
+	public static void main(String[] args) {
+		
+		Two obj1=new OurClass();
+		
+		
+
+	}
+
+}

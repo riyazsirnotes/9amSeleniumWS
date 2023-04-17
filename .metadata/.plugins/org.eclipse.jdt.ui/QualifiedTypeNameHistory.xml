@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="apr7th.Bank"/>
+    <fullyQualifiedTypeName name="apr12th.Student"/>
+    <fullyQualifiedTypeName name="apr12th.Leave"/>
+    <fullyQualifiedTypeName name="assignments.Aadhar"/>
+    <fullyQualifiedTypeName name="io.github.bonigarcia.wdm.WebDriverManager"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,15 @@
+package apr13th;
+
+public class InheritDemo1 {
+
+	public static void main(String[] args) {
+		
+		// case 1
+		
+		P obj1=new P();
+		
+		obj1.m1(); // 
+
+	}
+
+}

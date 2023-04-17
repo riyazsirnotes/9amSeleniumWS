@@ -1,0 +1,12 @@
+package apr13th;
+
+public class A {
+	
+	int x;
+	
+	public void setX(int a)
+	{
+		x=a;
+	}
+
+}

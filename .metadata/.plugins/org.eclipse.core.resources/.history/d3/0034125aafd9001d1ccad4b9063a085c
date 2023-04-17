@@ -1,0 +1,12 @@
+package apr13th;
+
+public class B {
+	
+	int x;
+	
+	public void putX(int a)
+	{
+		x=a;
+	}
+
+}
