@@ -19,11 +19,25 @@ public class ExceptionDemo1 {
 		
 		System.out.println("Quotient is "+z);
 		}
-		catch(Exception e)
+		catch(ArithmeticException e)
 		{
 			System.out.println("Please Enter non-zero value for y");
 			System.out.println(e.getMessage());
 		}
+		catch(NullPointerException e)
+		{
+			
+		}
+		catch(Exception e)
+		{
+			
+		}
+		finally
+		{
+			System.out.println("In Finally block");
+		}
+		
+		
 		
 		System.out.println("End of Program");
 
