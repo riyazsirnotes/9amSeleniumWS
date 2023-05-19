@@ -18,9 +18,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	
-	public WebDriver driver;
-	FileInputStream fis1;
-	Properties configProp;
+	public static WebDriver driver;
+	public FileInputStream fis1;
+	public static Properties configProp;
+	public FileInputStream fis2;
+	public static Properties locatorsProp;
 	@BeforeTest
 	public void fileSetUp() throws IOException, InterruptedException
 	{
@@ -30,6 +32,12 @@ public class BaseTest {
 		
 		configProp.load(fis1);
 		
+		fis2= new FileInputStream("Properties\\locators.properties");
+		
+		locatorsProp=new Properties();
+		
+		locatorsProp.load(fis2);
+		
 				
 	}
 	
@@ -37,33 +45,27 @@ public class BaseTest {
 	public void setUp()
 	{
 		
-		String browserName=configProp.getProperty("browser");
-		
-		if(browserName.equalsIgnoreCase("chrome"))
-		{
-			WebDriverManager.chromedriver().setup();
-			
-			driver=new ChromeDriver();
-		}
-		else if(browserName.equalsIgnoreCase("firefox"))
-		{
-			WebDriverManager.firefoxdriver().setup();
-			
-			driver=new FirefoxDriver();
-		}
-		else if(browserName.equalsIgnoreCase("edge"))
-		{
-			WebDriverManager.edgedriver().setup();
-			
-			driver=new EdgeDriver();
-		}
-		
-		driver.get(configProp.getProperty("url"));
-		
-		driver.manage().window().maximize();
-		
-		driver.manage().timeouts().implicitlyWait(Long.parseLong(configProp.getProperty("implicitWaitTime")), TimeUnit.SECONDS);
-		
+		/*
+		 * String browserName=configProp.getProperty("browser");
+		 * 
+		 * if(browserName.equalsIgnoreCase("chrome")) {
+		 * WebDriverManager.chromedriver().setup();
+		 * 
+		 * driver=new ChromeDriver(); } else if(browserName.equalsIgnoreCase("firefox"))
+		 * { WebDriverManager.firefoxdriver().setup();
+		 * 
+		 * driver=new FirefoxDriver(); } else if(browserName.equalsIgnoreCase("edge")) {
+		 * WebDriverManager.edgedriver().setup();
+		 * 
+		 * driver=new EdgeDriver(); }
+		 * 
+		 * driver.get(configProp.getProperty("url"));
+		 * 
+		 * driver.manage().window().maximize();
+		 * 
+		 * driver.manage().timeouts().implicitlyWait(Long.parseLong(configProp.
+		 * getProperty("implicitWaitTime")), TimeUnit.SECONDS);
+		 */
 	}
 	
 	@AfterMethod
