@@ -45,6 +45,7 @@ public class BaseTest {
 	public void setUp()
 	{
 		
+		
 		/*
 		 * String browserName=configProp.getProperty("browser");
 		 * 
@@ -66,6 +67,7 @@ public class BaseTest {
 		 * driver.manage().timeouts().implicitlyWait(Long.parseLong(configProp.
 		 * getProperty("implicitWaitTime")), TimeUnit.SECONDS);
 		 */
+		 
 	}
 	
 	@AfterMethod
