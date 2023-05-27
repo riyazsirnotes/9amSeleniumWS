@@ -9,10 +9,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
+import extentreports.ExtentManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage {
@@ -24,15 +30,36 @@ public class BasePage {
 	public FileInputStream fis2;
 	public static Properties locatorsProp;
 	
+	public static ExtentReports reports;
+	public static ExtentTest test;
+	
+	@AfterTest
+	public void exitTest(ITestContext context)
+	{
+		//reports=(ExtentReports)context.getAttribute("report");
+		
+		if(reports!=null)
+		{
+			reports.flush();
+		}
+	}
 	
 	@BeforeTest
-	public void fileSetUp() throws IOException, InterruptedException
+	public void fileSetUp(ITestContext context) throws IOException, InterruptedException
 	{
 		fis1= new FileInputStream("Properties\\config.properties");
 		
 		configProp=new Properties();
 		
 		configProp.load(fis1);
+		
+		reports=ExtentManager.getReports();
+		
+		test=reports.createTest(context.getCurrentXmlTest().getName());
+		
+		context.setAttribute("report", "reports");
+		
+		context.setAttribute("test", "test");
 						
 	}
 	
