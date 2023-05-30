@@ -59,7 +59,7 @@ public class ValidateSearchHotelUsingDataProvider extends BasePage {
 		
 		searchHotelPage.searchButton();
 		
-		Assert.assertEquals(searchHotelPage.getTitle(), hMap.get("Expected Title1"));
+		Assert.assertEquals(searchHotelPage.getTitle(), hMap.get("Expected Title2"));
 		
 				
 	}
